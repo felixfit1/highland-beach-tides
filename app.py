@@ -112,7 +112,7 @@ st.markdown("""<style>
 [data-testid="stHeader"] {background:rgba(7,23,37,.94)}
 .block-container {max-width:1200px;padding-top:2rem}
 h1,h2,h3,p,label,[data-testid="stMetricValue"],[data-testid="stMetricLabel"] {color:#e5eff5!important}
-[data-testid="stCaptionContainer"] p {color:#98b1c2!important}
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] *, .stCaption {color:#a9c2d1!important}
 [data-testid="stSidebar"] {background:#102638}
 [data-testid="stMetric"] {background:#102638;border:1px solid #244256;border-radius:16px;padding:16px}
 .stTabs [data-baseweb="tab-list"] {gap:20px;border-bottom:1px solid #244256}
@@ -141,7 +141,7 @@ def polish(fig, height=370):
     return fig
 
 def chart(fig):
-    st.plotly_chart(fig,width='stretch',config={'displayModeBar':False,'scrollZoom':False})
+    st.plotly_chart(fig,width='stretch',theme=None,config={'displayModeBar':False,'scrollZoom':False})
 
 threshold = st.sidebar.number_input('Threshold (feet above MLLW)', value=3.0, step=0.25)
 direction = st.sidebar.radio('Threshold direction', ['At or above', 'At or below'])
